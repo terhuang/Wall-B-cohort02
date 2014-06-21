@@ -1,8 +1,10 @@
 source "https://rubygems.org"
 
 gem "sinatra"
-gem "datamapper"
+# Sinatra is a simple web application framework
 
+gem "datamapper"
+# DataMapper is a library for interacting with databases
 
 group :development do
   # `group`s allow you to not install certain gems in certain environments.
