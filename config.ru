@@ -1,4 +1,4 @@
-require_relative 'wall_b'
+require './wall_b'
 
 run Sinatra::Application
 # `run` is a method provided by `rack` to run web applications.
