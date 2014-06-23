@@ -42,7 +42,13 @@ messages on.
    'human' things.
 1. Storing [data][data] submitted by an [http request][request] for later
    retrieval and presentation with a [database][database]
-1. Creating [relationships][relationships] between [datatypes][datatypes] in
+1. Creating [relationships][relational-databases] between [datatypes][datatypes] in
    your database.
 
 [heroku-quickstart]:https://devcenter.heroku.com/articles/quickstart
+[encryption-and-decyption]:https://github.com/codeunion/web-fundamentals/wiki/Glossary#encryption
+[data]:https://github.com/codeunion/web-fundamentals/wiki/Glossary#data
+[datatypes]:https://github.com/codeunion/web-fundamentals/wiki/Glossary#datatypes
+[request]:https://github.com/codeunion/web-fundamentals/wiki/Glossary#request
+[relational-databases]:https://github.com/codeunion/web-fundamentals/wiki/Glossary#relational-databases
+[database]:https://github.com/codeunion/web-fundamentals/wiki/Glossary#database
