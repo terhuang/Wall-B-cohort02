@@ -29,6 +29,9 @@ messages on.
 4. A guest may add a message to a wall
 5. A guest may see all the messages on a wall
 
+Not sure how to make this happen? The wiki should
+[get you started](https://github.com/codeunion/wall-b/wiki/home)!
+
 ## STREEEEETTTCCCCHHH goals (For the over-achievers out there)
 
 * A guest may use a shared secret to [encrypt][encryption-and-decryption] a message on a wall.
