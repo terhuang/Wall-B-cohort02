@@ -3,10 +3,13 @@ require 'sinatra'
 if ENV['RACK_ENV'] != "production"
   require 'dotenv'
   Dotenv.load '.env'
+  DataMapper.setup(:default, "sqlite:wall.db")
 end
 
+if ENV['RACK_ENV'] == "production"
+  DataMapper.setup(:default, ENV['DATABASE_URL'])
+end
 require 'data_mapper'
-DataMapper.setup(:default, ENV['DATABASE_URL'])
 # Here we're telling DataMapper to connect to the database specified by our
 # environment configuration.
 #
