@@ -9,7 +9,7 @@ messages on.
 ## Running the App
 
 1. Fork and clone this repository
-1. `bundle install --without development`
+1. `bundle install --without production`
 1. `cp .env.example .env`
 1. `rerun -x rackup` # Watches your files and re-starts the app on save.
 
