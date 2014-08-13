@@ -10,7 +10,7 @@ messages on.
 
 Wall-B will introduce you to the behavior and language surrounding the act of persisting information in a database.  In order to run this code base, you **MUST** install Sqlite.
 
-[Install Sqlite](https://github.com/codeunion/fundamentals-of-web-development/wiki/Resources-and-Tools#sqlite)
+[Install Sqlite!](https://github.com/codeunion/fundamentals-of-web-development/wiki/Resources-and-Tools#sqlite)
 
 
 ## Running the App
