@@ -6,6 +6,13 @@ PROGRAMMER stands to make a "killr app".
 Your mission? Create a website where people can create "Walls" anyone can add
 messages on.
 
+## Persistence
+
+Wall-B will introduce you to the behavior and language surrounding the act of persisting information in a database.  In order to run this code base, you **MUST** install Sqlite.
+
+[Install Sqlite](https://github.com/codeunion/fundamentals-of-web-development/wiki/Resources-and-Tools#sqlite)
+
+
 ## Running the App
 
 1. Fork and clone this repository
