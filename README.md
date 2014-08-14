@@ -8,9 +8,9 @@ messages on.
 
 ## Persistence
 
-Wall-B will introduce you to the behavior and language surrounding the act of persisting information in a database.  In order to run this code base, you **MUST** install Sqlite.
+Wall-B will introduce you to the behavior and language surrounding the act of persisting information in a database.  In order to run this application, you **MUST** have Sqlite installed on your machine.  Mac OSX Users should automatically have Sqlite installed and win/linux users may need to install it.
 
-[Install Sqlite!](https://github.com/codeunion/fundamentals-of-web-development/wiki/Resources-and-Tools#sqlite)
+[Resources for Installing Sqlite](https://github.com/codeunion/fundamentals-of-web-development/wiki/Resources-and-Tools#sqlite)
 
 
 ## Running the App
