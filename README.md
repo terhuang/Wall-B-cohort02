@@ -8,10 +8,13 @@ messages on.
 
 ## Persistence
 
-Wall-B will introduce you to the behavior and language surrounding the act of persisting information in a database.  In order to run this application, you **MUST** have Sqlite installed on your machine.  Mac OSX Users should automatically have Sqlite installed and win/linux users may need to install it.
+Wall-B will introduce you to the behavior and language surrounding the act of
+persisting information in a database.  In order to run this application, you
+**MUST** have SQLite3 installed on your machine.  Mac OS X users should
+automatically have SQLite3 installed, but Windows or Linux users will have to
+install it themselves.
 
-[Resources for Installing Sqlite](https://github.com/codeunion/fundamentals-of-web-development/wiki/Resources-and-Tools#sqlite)
-
+Read our [guide for installing SQLite3][sqlite3-install].
 
 ## Running the App
 
@@ -64,6 +67,7 @@ Not sure how to make this happen? The wiki should
 1. Creating [relationships][relational-databases] between [datatypes][datatypes] in
    your database.
 
+[sqlite3-install]:https://github.com/codeunion/fundamentals-of-web-development/wiki/Resources-and-Tools#sqlite
 [heroku-quickstart]:https://devcenter.heroku.com/articles/quickstart
 [encryption-and-decyption]:https://github.com/codeunion/web-fundamentals/wiki/Glossary#encryption
 [data]:https://github.com/codeunion/web-fundamentals/wiki/Glossary#data
