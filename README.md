@@ -21,7 +21,7 @@ Read our [guide for installing SQLite3][sqlite3-install].
 1. Fork and clone this repository
 1. `bundle install --without production`
 1. `cp .env.example .env`
-1. `rerun -x rackup` # Watches your files and re-starts the app on save.
+1. `bundle exec rerun -x rackup` # Watches your files and re-starts the app on save.
 
 ## Pushing to Production
 
