@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'data_mapper'
+require 'pry'
 
 if ENV['RACK_ENV'] != "production"
   require 'dotenv'
@@ -111,7 +112,7 @@ get("/walls/new") do
 end
 
 post("/walls") do
-  wall_attributes = params["wall"]
+  wall_attributes = params().fetch("wall")
   # We'll get the starting attributes for this wall from `params` that came in
   # from `views/new_wall.erb`
 
