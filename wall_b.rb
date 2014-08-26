@@ -1,9 +1,10 @@
 require 'sinatra'
 require 'data_mapper'
+require 'pry'
 
 if ENV['RACK_ENV'] != "production"
   require 'dotenv'
-  Dotenv.load '.env'
+  Dotenv.load('.env')
   DataMapper.setup(:default, "sqlite:wall.db")
 end
 
@@ -85,37 +86,37 @@ end
 # programming takes practice!
 
 
-DataMapper.finalize
-DataMapper.auto_upgrade!
+DataMapper.finalize()
+DataMapper.auto_upgrade!()
 
 # These two lines tell DataMapper that you've defined all your models; and to
 # prepare the database for writing and reading. It also makes sure the databases
 # `schema` (or "structure" or "shape") matches the `DataMapper::Resource`s
 # you've defined above.
 
-get "/" do
-  @walls = Wall.all
+get("/") do
+  walls = Wall.all()
   # `all` is a method provided when we `include DataMapper::Resource`. It lets
   # us retrieve every `Wall` record in our database!
   # See:
   # * User docs: http://datamapper.org/docs/find.html
   # * Method docs: http://rdoc.info/github/datamapper/dm-core/DataMapper/Collection#all-instance_method
-  erb :home
+  erb(:home, :locals => {:walls => walls}) 
 end
 
-get "/walls/new" do
-  @wall = Wall.new
+get("/walls/new") do
+  wall = Wall.new()
   # We're going to create a new wall, since `views/new_wall.erb` requires a
   # `@wall` instance variable to auto-fill in the form.
-  erb :new_wall
+  erb(:new_wall, :locals => {:wall => wall})
 end
 
-post "/walls" do
-  wall_attributes = params["wall"]
+post("/walls") do
+  wall_attributes = params().fetch("wall")
   # We'll get the starting attributes for this wall from `params` that came in
   # from `views/new_wall.erb`
 
-  wall_attributes["created_at"] = DateTime.now
+  wall_attributes["created_at"] = DateTime.now()
   # And add in the `created_at` attribute with the current time.
 
   @wall = Wall.create(wall_attributes)
@@ -124,11 +125,11 @@ post "/walls" do
   # * User Docs for Create: http://datamapper.org/docs/create_and_destroy.html
   # * Method docs for create: http://rdoc.info/github/datamapper/dm-core/DataMapper/Model#create-instance_method
 
-  if @wall.saved?
+  if @wall.saved?()
     redirect "/"
     # If we successfuly create the wall, let's send the user back home.
   else
-    erb :new_wall
+    erb(:new_wall)
     # If we *can't* create the wall; We'll redisplay the form so the user can
     # fix any errors.
   end
