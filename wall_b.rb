@@ -1,6 +1,5 @@
 require 'sinatra'
 require 'data_mapper'
-require 'pry'
 
 if ENV['RACK_ENV'] != "production"
   require 'dotenv'
