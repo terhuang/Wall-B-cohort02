@@ -11,28 +11,7 @@ if ENV['RACK_ENV'] == "production"
   DataMapper.setup(:default, ENV['DATABASE_URL'])
 end
 
-# Here we're telling DataMapper to connect to the database specified by our
-# environment configuration.
-#
-# Heroku creates a postgres database and prepopulates our environment
-# configuration in production us just because we included the `pg` gem in our
-# Gemfile. HOORAY!
-
-
-# Below, we're defining a custom `datatype` to represent a `Wall`. Custom data
-# types that represent the problem domain you're working in are called `models`.
-
 class Wall
-  # `class` is a keyword for defining custom `datatypes`. These data types can
-  # include data and methods.
-  #
-  # Custom data types are often built on top of and/or compose existing data
-  # types.
-  #
-  # Remember! `String`, `Array`, `Fixnum` (i.e. whole numbers), `Float`, (i.e.
-  # decimal numbers), `Hash`, etc. are datatypes you've been using all along.
-  # These common data types are used across many langauges; though they may have
-  # slightly different names and methods.
 
   include DataMapper::Resource
   # `include` is a way to say that your `Wall` is a "kind of"
@@ -88,6 +67,12 @@ end
 DataMapper.finalize()
 DataMapper.auto_upgrade!()
 
+def show_params(params)
+  puts "\n"
+  p params
+  puts "\n"
+end
+
 # These two lines tell DataMapper that you've defined all your models; and to
 # prepare the database for writing and reading. It also makes sure the databases
 # `schema` (or "structure" or "shape") matches the `DataMapper::Resource`s
@@ -101,6 +86,15 @@ get("/") do
   # * User docs: http://datamapper.org/docs/find.html
   # * Method docs: http://rdoc.info/github/datamapper/dm-core/DataMapper/Collection#all-instance_method
   erb(:home, :locals => {:walls => walls}) 
+end
+
+get("/wall/:id") do
+  show_params(params)
+  
+  @wall = Wall.get(params[:id])
+  puts @wall.title
+  puts @wall.description
+  erb(:wall)
 end
 
 get("/walls/new") do

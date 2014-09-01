@@ -1,7 +1,11 @@
 <ul>
-<% walls.each() do |wall| %>
-  <li><%= wall.title %></li>
+  <% walls.each() do |wall| %>
+    <li>
+      <a href=<%= "/wall/#{wall.id}" %>><%= wall.title %></a>
+    </li>
 <% end %>
 </ul>
 
 <a href="/walls/new">Add Your Own Wall</a>
+
+
