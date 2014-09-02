@@ -41,6 +41,8 @@ group :development do
   # `rerun` watches your files for saves; and re-executes a command every time
   # files are changed. Use `rerun -x rackup` in lieu of plain `rackup` and never
   # worry about restarting the server after code changes again!
+
+  gem 'pry-nav'
 end
 
 group :production do

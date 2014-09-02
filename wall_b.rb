@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'data_mapper'
+require 'pry-nav'
 
 if ENV['RACK_ENV'] != "production"
   require 'dotenv'
@@ -92,8 +93,7 @@ get("/wall/:id") do
   show_params(params)
   
   @wall = Wall.get(params[:id])
-  puts @wall.title
-  puts @wall.description
+
   erb(:wall)
 end
 
@@ -103,6 +103,20 @@ get("/walls/new") do
   # `@wall` instance variable to auto-fill in the form.
   erb(:new_wall, :locals => {:wall => wall})
 end
+
+get("/walls/:id/delete") do
+  show_params(params)
+  @wall = Wall.get(params[:id])
+  if params[:created_by] == @wall.created_by
+    @wall.destroy
+    redirect "/"
+  else
+    @error = "WRONG AUTHOR, DUDE! CHECK AGAIN!"
+    erb(:wall)
+  end
+end
+
+
 
 post("/walls") do
   wall_attributes = params().fetch("wall")

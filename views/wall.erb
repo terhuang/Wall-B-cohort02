@@ -1,3 +1,12 @@
+<%if @error %>
+<h1 style="color:red"><%= @error %></h1>
+<%end%>
+
+
 <strong>Title:</strong> <%= @wall.title %></br>
 <strong>Description:</strong>  <%= @wall.description %> </br>
-<strong>Author:</strong>  <%= @wall.created_by %>
+
+<form action=<%="/walls/#{@wall.id}/delete" %> method="GET">
+  Created By: <input type="text" name="created_by"><br>
+  <input type="submit" value="Delete">
+</form>
